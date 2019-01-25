@@ -18,7 +18,6 @@ var startTimes map[int]time.Time
 func EventHandler(e events.Event) {
 	switch t := e.(type) {
 	case KeyEvent:
-		fmt.Println(t.Key, t.State, t.Press, t.Duration)
 		dispatchEvent(e.(KeyEvent))
 	default:
 		// we don't care
