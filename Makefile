@@ -1,7 +1,7 @@
 GO_BIN ?= go
 
 install:
-	@$(GO_BIN) install -v ./.
+	@$(GO_BIN) install -v .
 	@make tidy
 
 tidy:
@@ -38,7 +38,7 @@ lint:
 	@make tidy
 
 update:
-	@$(GO_BIN) get -u 
+	@$(GO_BIN) get -u
 	@make tidy
 	@make test
 	@make install
