@@ -7,6 +7,7 @@ import (
 	"os/exec"
 	"time"
 
+	"github.com/bketelsen/godeck/version"
 	"github.com/bketelsen/libgo/events"
 	"github.com/karalabe/hid"
 )
@@ -89,6 +90,7 @@ func eventFromBytes(bb []byte) KeyEvent {
 }
 
 func main() {
+	fmt.Println("Version:", version.Version)
 	fmt.Println("HID Supported:", hid.Supported())
 	devices := hid.Enumerate(0x0fd9, 0x0060)
 
